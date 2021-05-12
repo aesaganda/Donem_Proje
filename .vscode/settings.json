@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "Carparar.C": "cpp",
+        "algorithm": "cpp",
+        "list": "cpp",
+        "xhash": "cpp",
+        "xmemory": "cpp",
+        "xtree": "cpp",
+        "random": "c",
+        "18.C": "cpp"
+    }
+}
