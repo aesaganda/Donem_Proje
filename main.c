@@ -1445,6 +1445,9 @@ void musteriEkleme()
 
     FILE *musteriKayitlari = fopen("musteriKayitlari.txt", "a"); //dosya acildi.
 
+    // Buradaki structlar pointer yardımıyla musteriGirisine aktarılacak
+    // Fonksiyon tipi void den struct* a çevrilmeli
+
     struct musteriBilgileri musteriEkleme[musteriSayisi];
     struct krediKartiBilgileri kredikart[musteriSayisi];
     struct musteriAdresi adres[musteriSayisi];

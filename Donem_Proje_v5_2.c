@@ -1950,6 +1950,7 @@ void musteriEkleme()
 
     FILE *musteriKayitlari = fopen("musteriKayitlari.txt", "a"); //dosya acildi.
 
+// Bu structlar pointer ile musteriGiris fon
     struct musteriBilgileri musteriEkleme[musteriSayisi];
     struct krediKartiBilgileri kredikart[musteriSayisi];
     struct musteriAdresi adres[musteriSayisi];
