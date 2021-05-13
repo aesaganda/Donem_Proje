@@ -5,3 +5,9 @@
 -Sehir: e	Ilce: e	-Mahalle: e
 -Sokak: e	-Ev No: 1
 ============================================================================
+-Ad: e	-Soyad: e	-Sifre: 1
+-Kart Numarasi: 2	-Kart Uzerindeki Isim: e
+-Gecerlilik Tarihi: 1	-Guvenlik Kodu: 1
+-Sehir: e	Ilce: e	-Mahalle: e
+-Sokak: e	-Ev No: e
+============================================================================

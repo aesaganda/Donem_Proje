@@ -24,12 +24,6 @@ unsigned int siparis = 0;
 // İşlev fonksiyonları
 float siparisDetaylari(float *fiyatToplam, float tekFiyat);
 
-// Ekleme ve Güncelleme Fonksiyonları
-void yemek_ekle(int veri, char yemekAdi[25], int miktar, float fiyat);
-void fiyat_guncelle();
-void musteriEkleme();
-void musteriKayitlariniGoruntule();
-
 // Silme ve Sayma Fonksiyonları
 void yemek_sil(int siparisKodu);
 void yemek_say();
@@ -96,7 +90,19 @@ struct musteriBilgileri
     float musteriHesapbakiyesi;
     struct musteriAdresi adres;
     struct krediKartiBilgileri krediKarti;
+
+    struct musteriBilgileri *nextPtr;
 };
+
+typedef struct musteriBilgileri musteriler;
+typedef musteriler *musterilerPtr;
+musterilerPtr musteri = NULL;
+
+// Ekleme ve Güncelleme Fonksiyonları
+void yemek_ekle(int veri, char yemekAdi[25], int miktar, float fiyat);
+void fiyat_guncelle();
+void musteriEkleme(musterilerPtr *ptr);
+void musteriKayitlariniGoruntule();
 
 struct iceceklerBilgi
 {
@@ -218,7 +224,7 @@ int main()
 {
     tamEkran(); // Konsol ekranini tam ekran seklinde donusturme
     struct musteriBilgileri musteri[musteriSayisi];
-    struct musteriBilgileri *musteriler;
+    //struct musteriBilgileri *musteriler;
     system("title Marmara Kebap House");
     //system("mode con: cols=100 lines=40");
     bas = NULL;
@@ -326,7 +332,7 @@ void ana_menu()
         break;
 
     case 3:
-        musteriEkleme();
+        musteriEkleme(musteri);
         break;
 
     case 4:
@@ -1937,7 +1943,7 @@ void ilerleme(void)
     }
 }
 
-void musteriEkleme()
+void musteriEkleme(musterilerPtr *ptr)
 {
     system("color 3E");
     printf("\n\t\t");
@@ -1950,7 +1956,7 @@ void musteriEkleme()
 
     FILE *musteriKayitlari = fopen("musteriKayitlari.txt", "a"); //dosya acildi.
 
-// Bu structlar pointer ile musteriGiris fon
+    // Bu structlar pointer ile musteriGiris fon
     struct musteriBilgileri musteriEkleme[musteriSayisi];
     struct krediKartiBilgileri kredikart[musteriSayisi];
     struct musteriAdresi adres[musteriSayisi];
