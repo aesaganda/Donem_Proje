@@ -63,23 +63,6 @@ void ilerleme();
 void menuRenk();
 
 // Structlarin tanımı
-struct musteriAdresi
-{
-    char *sehir;
-    char *ilce;
-    char *semt;
-    char *sokak;
-    char *daireNo;
-};
-
-struct krediKartiBilgileri
-{
-    char *kartNumarasi;
-    char *gecerlilikTarihi; // tarih ay/yıl seklinde
-    char *kartSahibiAdi;
-    char *guvenlikKodu;
-};
-
 struct musteriBilgileri
 {
     char *musteriIsmi;
@@ -88,6 +71,24 @@ struct musteriBilgileri
     char *musteriSifre;
 
     float musteriHesapbakiyesi;
+
+    struct musteriAdresi
+    {
+        char *sehir;
+        char *ilce;
+        char *semt;
+        char *sokak;
+        char *daireNo;
+    };
+
+    struct krediKartiBilgileri
+    {
+        char *kartNumarasi;
+        char *gecerlilikTarihi; // tarih ay/yıl seklinde
+        char *kartSahibiAdi;
+        char *guvenlikKodu;
+    };
+
     struct musteriAdresi adres;
     struct krediKartiBilgileri krediKarti;
 

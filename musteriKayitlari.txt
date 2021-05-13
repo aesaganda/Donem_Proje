@@ -1,13 +1,7 @@
--Ad: e	-Soyad: e	-Sifre: 1
+-Ad: 1	-Soyad: 1	-Sifre: 1
 -ID kodunuz: 1
--Kart Numarasi: 1	-Kart Uzerindeki Isim: e
+-Kart Numarasi: 1	-Kart Uzerindeki Isim: 1
 -Gecerlilik Tarihi: 1	-Guvenlik Kodu: 1
--Sehir: e	Ilce: e	-Mahalle: e
--Sokak: e	-Ev No: 1
-============================================================================
--Ad: e	-Soyad: e	-Sifre: 1
--Kart Numarasi: 2	-Kart Uzerindeki Isim: e
--Gecerlilik Tarihi: 1	-Guvenlik Kodu: 1
--Sehir: e	Ilce: e	-Mahalle: e
--Sokak: e	-Ev No: e
+-Sehir: 1	Ilce: 1	-Mahalle: 1
+-Sokak: 1	-Ev No: 1
 ============================================================================

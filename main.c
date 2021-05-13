@@ -24,25 +24,9 @@ unsigned int siparis = 0;
 // Ä°ÅŸlev fonksiyonlarÄ±
 float siparisDetaylari(float *fiyatToplam, float tekFiyat);
 
-// Ekleme ve GÃ¼ncelleme FonksiyonlarÄ±
-void yemek_ekle(int veri, char yemekAdi[25], int miktar, float fiyat);
-void fiyat_guncelle();
-void musteriEkleme();
-void musteriKayitlariniGoruntule();
-
 // Silme ve Sayma FonksiyonlarÄ±
 void yemek_sil(int siparisKodu);
 void yemek_say();
-
-// MenÃ¼ fonksiyonlarÄ±
-void yemek_listesi(int n);
-void admin_menu();
-void siparis_menu();
-void ana_menu();
-void musteriGirisi();
-void uygulamayiKapat();
-void gecersizGiris();
-int secimFonksiyonu();
 
 // Alt menÃ¼ fonksiyonlarÄ±
 void kebap();
@@ -65,24 +49,9 @@ void karsilama();
 void ilerleme();
 void menuRenk();
 
+/* Diğer structları tek pointerda tutabilmek için musteriBilgilerinin içinde topladım */
+
 // Structlarin tanÄ±mÄ±
-struct musteriAdresi
-{
-    char *sehir;
-    char *ilce;
-    char *semt;
-    char *sokak;
-    char *daireNo;
-};
-
-struct krediKartiBilgileri
-{
-    char *kartNumarasi;
-    char *gecerlilikTarihi; // tarih ay/yÄ±l seklinde
-    char *kartSahibiAdi;
-    char *guvenlikKodu;
-};
-
 struct musteriBilgileri
 {
     char *musteriIsmi;
@@ -91,9 +60,49 @@ struct musteriBilgileri
     int musteriSifre;
     int musteriId;
     float musteriHesapbakiyesi;
+
+    struct musteriAdresi
+    {
+        char *sehir;
+        char *ilce;
+        char *semt;
+        char *sokak;
+        char *daireNo;
+    };
+
+    struct krediKartiBilgileri
+    {
+        char *kartNumarasi;
+        char *gecerlilikTarihi; // tarih ay/yÄ±l seklinde
+        char *kartSahibiAdi;
+        char *guvenlikKodu;
+    };
+
     struct musteriAdresi adres;
     struct krediKartiBilgileri krediKarti;
+
+    struct musteriBilgileri *nextPtr;
 };
+
+typedef struct musteriBilgileri musteriler;
+typedef musteriler *musterilerPtr;
+musterilerPtr musteri = NULL;
+
+// Ekleme ve GÃ¼ncelleme FonksiyonlarÄ±
+void yemek_ekle(int veri, char yemekAdi[25], int miktar, float fiyat);
+void fiyat_guncelle();
+void musteriEkleme(musterilerPtr *ptr);
+void musteriKayitlariniGoruntule();
+
+// MenÃ¼ fonksiyonlarÄ±
+void yemek_listesi(int n);
+void admin_menu();
+void siparis_menu();
+void ana_menu();
+void musteriGirisi(musterilerPtr *ptr);
+void uygulamayiKapat();
+void gecersizGiris();
+int secimFonksiyonu();
 
 struct iceceklerBilgi
 {
@@ -279,7 +288,7 @@ void ana_menu()
     switch (anaSecim)
     {
     case 1:
-        musteriGirisi();
+        musteriGirisi(musteri);
         break;
 
     case 2:
@@ -287,7 +296,7 @@ void ana_menu()
         break;
 
     case 3:
-        musteriEkleme();
+        musteriEkleme(musteri);
         break;
 
     case 4:
@@ -410,7 +419,7 @@ void admin_menu()
     }
 }
 
-void musteriGirisi()
+void musteriGirisi(musterilerPtr *ptr)
 {
     cls();
 
@@ -1432,7 +1441,7 @@ void ilerleme(void)
     }
 }
 
-void musteriEkleme()
+void musteriEkleme(musterilerPtr *ptr)
 {
     system("color 3E");
     printf("\n\t\t");
