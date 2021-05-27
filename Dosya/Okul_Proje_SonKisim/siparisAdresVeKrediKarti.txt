@@ -1,0 +1,32 @@
+            ODEME ONLINE OLARAK YAPILMISTIR.            
+-Musteri Siparis Kodu:7619
+-Musteri Adi: Ahmet	-Musteri Soyadi: Taylan 
+-Kart Numarasi: 1245787836362489	-Kart Sahibi Adi: ahmettaylan 
+-Gecerlilik Tarihi: 1212	-Guvenlik Kodu: 546 
+-Sehir: Bursa	-Ilce: NilÅfer 
+-Mahalle: Balat	-Sokak: 14	-DaireNo:105c 
+
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 8116
+-Musteri Adi: Melih	-Musteri Soyadi: Afüar 
+-Sehir: Bursa	- Ilce: NilÅfer 
+-Mahalle: GîrÅkle	-Sokak: Dumlupçnar	 -DaireNo:12 
+
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 9912
+-Musteri Adi: Hakan	-Musteri Soyadi: Kara 
+-Sehir: Bursa	- Ilce: NilÅfer 
+-Mahalle: Kçzçlcçklç	-Sokak: Mehmet	 -DaireNo:akif 
+
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 359
+-Musteri Adi: Ahmet	-Musteri Soyadi: Hakan 
+-Sehir: Bursa	- Ilce: NilÅfer 
+-Mahalle: Kale	-Sokak: Kor	 -DaireNo:12 
+
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 1974
+-Musteri Adi: a	-Musteri Soyadi: a 
+-Sehir: a	- Ilce: a 
+-Mahalle: a	-Sokak: a	 -DaireNo:a 
+

@@ -61,25 +61,16 @@ struct musteriBilgileri
     int musteriId;
     float musteriHesapbakiyesi;
 
-    struct musteriAdresi
-    {
-        char *sehir;
-        char *ilce;
-        char *semt;
-        char *sokak;
-        char *daireNo;
-    };
+    char *sehir;
+    char *ilce;
+    char *semt;
+    char *sokak;
+    char *daireNo;
 
-    struct krediKartiBilgileri
-    {
-        char *kartNumarasi;
-        char *gecerlilikTarihi; // tarih ay/yÄ±l seklinde
-        char *kartSahibiAdi;
-        char *guvenlikKodu;
-    };
-
-    struct musteriAdresi adres;
-    struct krediKartiBilgileri krediKarti;
+    char *kartNumarasi;
+    char *gecerlilikTarihi; // tarih ay/yÄ±l seklinde
+    char *kartSahibiAdi;
+    char *guvenlikKodu;
 
     struct musteriBilgileri *nextPtr;
 };
@@ -98,7 +89,7 @@ void musteriKayitlariniGoruntule();
 void yemek_listesi(int n);
 void admin_menu();
 void siparis_menu();
-void ana_menu();
+void ana_menu(musterilerPtr *ptr);
 void musteriGirisi(musterilerPtr *ptr);
 void uygulamayiKapat();
 void gecersizGiris();
@@ -187,8 +178,8 @@ test *bas, *liste;
 int main()
 {
     tamEkran(); // Konsol ekranini tam ekran seklinde donusturme
-    struct musteriBilgileri musteri[musteriSayisi];
-    struct musteriBilgileri *musteriler;
+    //struct musteriBilgileri musteri[musteriSayisi];
+    //struct musteriBilgileri *musteriler;
     system("title Marmara Kebap House");
     //system("mode con: cols=100 lines=40");
     bas = NULL;
@@ -199,7 +190,7 @@ int main()
     cls();
     //  karsilama();
     cls();
-    ana_menu();
+    ana_menu(musteri);
 }
 
 void cls()
@@ -269,7 +260,7 @@ void yemek_ekle(int veri, char yemekAdi[25], int miktar, float fiyat)
     liste = bas;
 }
 
-void ana_menu()
+void ana_menu(musterilerPtr *ptr)
 {
     cls();
     int i, n = 0;
@@ -288,7 +279,7 @@ void ana_menu()
     switch (anaSecim)
     {
     case 1:
-        musteriGirisi(musteri);
+        musteriGirisi(&musteri);
         break;
 
     case 2:
@@ -296,7 +287,7 @@ void ana_menu()
         break;
 
     case 3:
-        musteriEkleme(musteri);
+        musteriEkleme(&musteri);
         break;
 
     case 4:
@@ -316,7 +307,7 @@ void admin_menu()
 
     if (adminSecim == 0)
     {
-        ana_menu();
+        ana_menu(&musteri);
     }
 
     else if (adminSecim != 12345)
@@ -326,7 +317,7 @@ void admin_menu()
         tab_bas(4);
         echo("Giris yaparken hatali tuslama yaptiniz...\n\n");
         Sleep(1000);
-        ana_menu();
+        ana_menu(&musteri);
     }
 
     else if (adminSecim == 12345)
@@ -360,7 +351,7 @@ void admin_menu()
         switch (adminSecim)
         {
         case 0:
-            ana_menu();
+            ana_menu(&musteri);
             break;
 
         case 1:
@@ -448,7 +439,7 @@ void musteriGirisi(musterilerPtr *ptr)
         {
             printf("id kodunuz veya sifreniz hatalidir...\n");
             Sleep(1000);
-            ana_menu();
+            ana_menu(&musteri);
         }
         i++;
     }
@@ -475,7 +466,7 @@ void yemek_listesi(int n)
     switch (listeSecim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -588,7 +579,7 @@ void icecekSecimVeFiyatlandirma(struct iceceklerBilgi *pIcecek, int n)
             kasadakiPara += toplamTutar;
             //! toplamTutar sifirlanmadan once dosyaya aktarilmali
             toplamTutar = 0;
-            ana_menu();
+            ana_menu(&musteri);
         }
         else
         {
@@ -650,7 +641,7 @@ void icecekSecimVeFiyatlandirma(struct iceceklerBilgi *pIcecek, int n)
         break;
     }
     Sleep(1000);
-    ana_menu();
+    ana_menu(&musteri);
 }
 
 void kebap(int n)
@@ -709,7 +700,7 @@ hataliTuslama:
     switch (kebapGuncelleme)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -734,7 +725,7 @@ hataliTuslama:
     }
     echo("\n Basariyla kaydedilmistir.");
     getch();
-    ana_menu();
+    ana_menu(&musteri);
 }
 
 void kebapSecimVeFiyatlandirma(struct kebaplarBilgi *pKebap, int n)
@@ -746,7 +737,7 @@ void kebapSecimVeFiyatlandirma(struct kebaplarBilgi *pKebap, int n)
     switch (kebap_secim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -823,7 +814,7 @@ void donerSecimVeFiyatlandirma(struct donerlerBilgi *pDoner, int n)
     switch (doner_secim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -926,7 +917,7 @@ void hamburgerSecimVeFiyatlandirma(struct hamburgerlerBilgi *pHamburger, int n)
     switch (hamburger_secim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -1052,7 +1043,7 @@ void pizzaSecimVeFiyatlandirma(struct pizzalarBilgi *pPizza, int n)
     switch (pizza_secim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -1163,7 +1154,7 @@ void pideSecimVeFiyatlandirma(struct pidelerBilgi *pPide, int n)
     switch (pide_secim)
     {
     case 0:
-        ana_menu();
+        ana_menu(&musteri);
         break;
 
     case 1:
@@ -1457,9 +1448,14 @@ void musteriEkleme(musterilerPtr *ptr)
     // Buradaki structlar pointer yardımıyla musteriGirisine aktarılacak
     // Fonksiyon tipi void den struct* a çevrilmeli
 
+    /*
     struct musteriBilgileri musteriEkleme[musteriSayisi];
     struct krediKartiBilgileri kredikart[musteriSayisi];
     struct musteriAdresi adres[musteriSayisi];
+    */
+
+    struct musteriBilgileri musteriEkleme[musteriSayisi];
+    ptr = &musteriEkleme;
 
     if (musteriKayitlari == NULL)
     {
@@ -1473,7 +1469,7 @@ void musteriEkleme(musterilerPtr *ptr)
 
     if (musteriEklemeSecim == 0)
     {
-        ana_menu();
+        ana_menu(&musteri);
     }
 
     //!asagidaki degiskenler alinan bilgilerin gecici olarak tutulmasi icin olusturuldu..
@@ -1490,7 +1486,7 @@ void musteriEkleme(musterilerPtr *ptr)
     char sokak[25];
     char daireNo[25];
 
-    do //2 ornek olsun diye.
+    do // Koşul -1 olmayacağı için do sadece çağırıldığında 1 kez çalışır ve sayaç artar.
     {
 
         echo("\n\t\t--Uyelik olusturmak icin lutfen bilgilerinizi giriniz.--\n");
@@ -1525,38 +1521,38 @@ void musteriEkleme(musterilerPtr *ptr)
         musteriEkleme[i].musteriIsmi = (char *)malloc(sizeof(char) * strlen(musteriIsmi));
         musteriEkleme[i].musteriSoyismi = (char *)malloc(sizeof(char) * strlen(musteriSoyismi));
         //    musteriEkleme[i].musteriSifre = (char *)malloc(sizeof(char) * strlen(musteriSifre));
-        kredikart[i].kartNumarasi = (char *)malloc(sizeof(char) * strlen(kartNumarasi));
-        kredikart[i].kartSahibiAdi = (char *)malloc(sizeof(char) * strlen(kartSahibiAdi));
-        kredikart[i].gecerlilikTarihi = (char *)malloc(sizeof(char) * strlen(gecerlilikTarihi));
-        kredikart[i].guvenlikKodu = (char *)malloc(sizeof(char) * strlen(guvenlikKodu));
-        adres[i].sehir = (char *)malloc(sizeof(char) * strlen(sehir));
-        adres[i].ilce = (char *)malloc(sizeof(char) * strlen(ilce));
-        adres[i].semt = (char *)malloc(sizeof(char) * strlen(semt));
-        adres[i].sokak = (char *)malloc(sizeof(char) * strlen(sokak));
-        adres[i].daireNo = (char *)malloc(sizeof(char) * strlen(daireNo));
+        musteriEkleme[i].kartNumarasi = (char *)malloc(sizeof(char) * strlen(kartNumarasi));
+        musteriEkleme[i].kartSahibiAdi = (char *)malloc(sizeof(char) * strlen(kartSahibiAdi));
+        musteriEkleme[i].gecerlilikTarihi = (char *)malloc(sizeof(char) * strlen(gecerlilikTarihi));
+        musteriEkleme[i].guvenlikKodu = (char *)malloc(sizeof(char) * strlen(guvenlikKodu));
+        musteriEkleme[i].sehir = (char *)malloc(sizeof(char) * strlen(sehir));
+        musteriEkleme[i].ilce = (char *)malloc(sizeof(char) * strlen(ilce));
+        musteriEkleme[i].semt = (char *)malloc(sizeof(char) * strlen(semt));
+        musteriEkleme[i].sokak = (char *)malloc(sizeof(char) * strlen(sokak));
+        musteriEkleme[i].daireNo = (char *)malloc(sizeof(char) * strlen(daireNo));
 
         //!burada alinan bilgiler structlara kopyalandi...
         strcpy(musteriEkleme[i].musteriIsmi, musteriIsmi);
         strcpy(musteriEkleme[i].musteriSoyismi, musteriSoyismi);
         //   strcpy(musteriEkleme[i].musteriSifre, musteriSifre);
-        strcpy(kredikart[i].kartNumarasi, kartNumarasi);
-        strcpy(kredikart[i].kartSahibiAdi, kartSahibiAdi);
-        strcpy(kredikart[i].gecerlilikTarihi, gecerlilikTarihi);
-        strcpy(kredikart[i].guvenlikKodu, guvenlikKodu);
-        strcpy(adres[i].sehir, sehir);
-        strcpy(adres[i].ilce, ilce);
-        strcpy(adres[i].semt, semt);
-        strcpy(adres[i].sokak, sokak);
-        strcpy(adres[i].daireNo, daireNo);
+        strcpy(musteriEkleme[i].kartNumarasi, kartNumarasi);
+        strcpy(musteriEkleme[i].kartSahibiAdi, kartSahibiAdi);
+        strcpy(musteriEkleme[i].gecerlilikTarihi, gecerlilikTarihi);
+        strcpy(musteriEkleme[i].guvenlikKodu, guvenlikKodu);
+        strcpy(musteriEkleme[i].sehir, sehir);
+        strcpy(musteriEkleme[i].ilce, ilce);
+        strcpy(musteriEkleme[i].semt, semt);
+        strcpy(musteriEkleme[i].sokak, sokak);
+        strcpy(musteriEkleme[i].daireNo, daireNo);
 
         //!Dosyaya yazdirma islemleri yapildi.
         fprintf(musteriKayitlari, "-Ad: %s\t-Soyad: %s\t-Sifre: %d\n", musteriEkleme[i].musteriIsmi, musteriEkleme[i].musteriSoyismi,
                 musteriEkleme[i].musteriSifre);
         fprintf(musteriKayitlari, "-ID kodunuz: %d\n", musteriEkleme[i].musteriId);
-        fprintf(musteriKayitlari, "-Kart Numarasi: %s\t-Kart Uzerindeki Isim: %s\n", kredikart[i].kartNumarasi, kredikart[i].kartSahibiAdi);
-        fprintf(musteriKayitlari, "-Gecerlilik Tarihi: %s\t-Guvenlik Kodu: %s\n", kredikart[i].gecerlilikTarihi, kredikart[i].guvenlikKodu);
-        fprintf(musteriKayitlari, "-Sehir: %s\t%-Ilce: %s\t-Mahalle: %s\n", adres[i].sehir, adres[i].ilce, adres[i].semt);
-        fprintf(musteriKayitlari, "-Sokak: %s\t-Ev No: %s\n", adres[i].sokak, adres[i].daireNo);
+        fprintf(musteriKayitlari, "-Kart Numarasi: %s\t-Kart Uzerindeki Isim: %s\n", musteriEkleme[i].kartNumarasi, musteriEkleme[i].kartSahibiAdi);
+        fprintf(musteriKayitlari, "-Gecerlilik Tarihi: %s\t-Guvenlik Kodu: %s\n", musteriEkleme[i].gecerlilikTarihi, musteriEkleme[i].guvenlikKodu);
+        fprintf(musteriKayitlari, "-Sehir: %s\t%-Ilce: %s\t-Mahalle: %s\n", musteriEkleme[i].sehir, musteriEkleme[i].ilce, musteriEkleme[i].semt);
+        fprintf(musteriKayitlari, "-Sokak: %s\t-Ev No: %s\n", musteriEkleme[i].sokak, musteriEkleme[i].daireNo);
 
         fprintf(musteriKayitlari, "============================================================================\n");
     } while (i == -1);
@@ -1566,7 +1562,7 @@ void musteriEkleme(musterilerPtr *ptr)
     fclose(musteriKayitlari);
     echo("Anasayfaya yonlendiriliyorsunuz...\n\n");
     Sleep(1000);
-    ana_menu();
+    ana_menu(musteri);
 }
 
 void musteriKayitlariniGoruntule()
@@ -1590,7 +1586,7 @@ void musteriKayitlariniGoruntule()
     int musteriEklemeSecim = secimFonksiyonu();
     if (musteriEklemeSecim == 0)
     {
-        ana_menu();
+        ana_menu(&musteri);
     }
 
     if (musteriEkranaYazdirma == NULL)
@@ -1611,7 +1607,7 @@ void musteriKayitlariniGoruntule()
     printf("\t\t Kayit olan tum kullanicilar goruntulenmektedir..\n");
     printf("\t\t Ana Menuye yonlendiriliyorsunuz..");
     Sleep(10000);
-    ana_menu();
+    ana_menu(musteri);
 }
 
 void uygulamayiKapat()
@@ -1635,7 +1631,7 @@ void gecersizGiris()
     cls();
     puts("Gecersiz giris yaptiniz. Lutfen tekrar deneyiniz. ");
     Sleep(1000);
-    ana_menu();
+    ana_menu(musteri);
 }
 
 //Gerekli if yerlerinde kullanÄ±lmak uzere secim icin fonksiyon

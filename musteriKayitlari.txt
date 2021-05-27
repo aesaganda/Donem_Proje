@@ -5,3 +5,29 @@
 -Sehir: 1	Ilce: 1	-Mahalle: 1
 -Sokak: 1	-Ev No: 1
 ============================================================================
+-Ad: e	-Soyad: e	-Sifre: 1
+-Kart Numarasi: 1	-Kart Uzerindeki Isim: 1
+-Gecerlilik Tarihi: e	-Guvenlik Kodu: e
+-Sehir: e	Ilce: e	-Mahalle: e
+-Sokak: e	-Ev No: e
+============================================================================
+-Ad: eren	-Soyad: sag	-Sifre: 123
+-Kart Numarasi: 123	-Kart Uzerindeki Isim: ere
+-Gecerlilik Tarihi: 123	-Guvenlik Kodu: 123
+-Sehir: ist	Ilce: gun	-Mahalle: ak
+-Sokak: beyat	-Ev No: 23
+============================================================================
+-Ad: e	-Soyad: e	-Sifre: 1
+-ID kodunuz: 1
+-Kart Numarasi: 1	-Kart Uzerindeki Isim: e
+-Gecerlilik Tarihi: e	-Guvenlik Kodu: 1
+-Sehir: e	Ilce: e	-Mahalle: e
+-Sokak: e	-Ev No: e
+============================================================================
+-Ad: e	-Soyad: e	-Sifre: 1
+-ID kodunuz: 1
+-Kart Numarasi: 1	-Kart Uzerindeki Isim: e
+-Gecerlilik Tarihi: e	-Guvenlik Kodu: 1
+-Sehir: e	Ilce: e	-Mahalle: e
+-Sokak: e	-Ev No: 1
+============================================================================

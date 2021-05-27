@@ -1,0 +1,162 @@
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+ 
+Coban: 	 	 10.00 * 1.00
+ 
+Kunefe: 	 	 13.00 * 1.00
+ 
+Kola: 	 	 4.00 * 1.00
+
+Toplam tutar:	 	 27.00
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+ 
+Gobek: 	 	 8.00 * 1.00
+ 
+Kunefe: 	 	 13.00 * 1.00
+ 
+Kola: 	 	 4.00 * 1.00
+
+Toplam tutar:	 	 25.00
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+ 
+Urfa: 	 	 20.00 * 1.00
+ 
+Gobek: 	 	 8.00 * 2.00
+ 
+Kola: 	 	 4.00 * 1.00
+
+Toplam tutar:	 	 40.00
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+ 
+Fish_Royale: 	 	 14.00 * 2.00
+ 
+Mevsim: 	 	 7.00 * 2.00
+ 
+Hosmerim: 	 	 10.00 * 2.00
+ 
+Fanta: 	 	 4.00 * 1.00
+
+Toplam tutar:	 	 66.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ahmet       Soyadiniz: Taylan
+Adres Bilginiz:
+Sehir:   Bursa   Ilce:   Nilufer   Semt/Mahalle:   Gorukle
+Sokak:   Dumlupinar   Apartman Ismi:   Kahraman   Daire No:   12
+
+----------------------------------------------------------------
+ 
+Ayran: 	 	 3.00 * 1.00
+
+Toplam tutar:	 	 3.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz:        Soyadiniz: 
+Adres Bilginiz:
+Sehir:      Ilce:      Semt/Mahalle:   
+Sokak:      Apartman Ismi:      Daire No:   
+
+----------------------------------------------------------------
+ 
+Turk_Kahvesi: 	 	 5.00 * 2.00
+
+Toplam tutar:	 	 10.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------
+ 
+Soda: 	 	 2.00 * 1.00
+
+Toplam tutar:	 	 2.00
+
+     Ucret Online Odeme ile tahsil edildi...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------
+
+Toplam tutar:	 	 0.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+			   27/5/2021  17:41
+ 
+Tarhana: 	 	 9.00 * 1.00
+ 
+Patates: 	 	 8.00 * 8.00
+ 
+Profiterol: 	 	 8.00 * 7.00
+ 
+Soda: 	 	 2.00 * 6.00
+
+Toplam tutar:	 	 141.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+			   27/5/2021  18:21
+ 
+Ekonomik: 	 	 8.00 * 1.00
+ 
+Mevsim: 	 	 7.00 * 1.00
+ 
+Hosmerim: 	 	 10.00 * 1.00
+ 
+Kola: 	 	 4.00 * 2.00
+
+Toplam tutar:	 	 33.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+			Marmara Kebap Salonu
+			   27/5/2021  18:42
+ 
+Mercimek: 	 	 8.00 * 3.00
+ 
+Patates: 	 	 8.00 * 1.00
+ 
+Trilece: 	 	 10.00 * 1.00
+ 
+Fanta: 	 	 4.00 * 3.00
+
+Toplam tutar:	 	 54.00
+
+     Ucret Kapida Odeme Olarak tahsil edilecek...
+Adiniz: Ali       Soyadiniz: Sak
+Adres Bilginiz:
+Sehir:   ist   Ilce:   gun   Semt/Mahalle:   gun
+Sokak:   gun   Apartman Ismi:   gun   Daire No:   22
+
+----------------------------------------------------------------

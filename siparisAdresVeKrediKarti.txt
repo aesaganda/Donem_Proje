@@ -1,0 +1,19 @@
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Adi: e	-Musteri Soyadi: e 
+-Sehir: e	- Ilce: e 
+-Mahalle: e	-Sokak: e	 -DaireNo:e 
+
+            ODEME ONLINE OLARAK YAPILMISTIR.            
+-Musteri Adi: re	-Musteri Soyadi: er 
+-Kart Numarasi: er	-Kart Sahibi Adi: 23 
+-Gecerlilik Tarihi: fd	-Guvenlik Kodu: 34r3 
+-Sehir: er	-Ilce: er 
+-Mahalle: dfcf	-Sokak: vsfv	-DaireNo:sdf 
+
+            ODEME ONLINE OLARAK YAPILMISTIR.            
+-Musteri Adi: ist	-Musteri Soyadi: eren 
+-Kart Numarasi: 342	-Kart Sahibi Adi: erw 
+-Gecerlilik Tarihi: df	-Guvenlik Kodu: 23 
+-Sehir: fds	-Ilce: df 
+-Mahalle: sdf	-Sokak: fds	-DaireNo:dsf 
+

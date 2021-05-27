@@ -21,47 +21,6 @@ unsigned int toplamSiparis[100];
 unsigned int siparisMiktari[100];
 unsigned int siparis = 0;
 
-// İşlev fonksiyonları
-float siparisDetaylari(float *fiyatToplam, float tekFiyat);
-
-// Silme ve Sayma Fonksiyonları
-void yemek_sil(int siparisKodu);
-void yemek_say();
-
-// Menü fonksiyonları
-void yemek_listesi(int n);
-void admin_menu();
-void siparis_menu();
-void ana_menu();
-void uygulamayiKapat();
-void gecersizGiris();
-int secimFonksiyonu();
-
-// Alt menü fonksiyonları
-void kebap();
-void doner();
-void corba();
-void evYemekleri();
-void balik();
-void pizza();
-void pide();
-void hamburger();
-void salata();
-void tatli();
-void icecekler();
-
-// Tasarım fonksiyonları
-void tamEkran();
-void cls();
-void echo(char print[]);
-void satir_bas(int line);
-void tab_bas(int tab);
-void bosluk_bas(int space);
-void cerceve();
-void karsilama();
-void ilerleme();
-void menuRenk();
-
 // Structlarin tanımı
 struct musteriBilgileri
 {
@@ -72,25 +31,19 @@ struct musteriBilgileri
 
     float musteriHesapbakiyesi;
 
-    struct musteriAdresi
-    {
-        char *sehir;
-        char *ilce;
-        char *semt;
-        char *sokak;
-        char *daireNo;
-    };
+    char *sehir;
+    char *ilce;
+    char *semt;
+    char *sokak;
+    char *daireNo;
 
-    struct krediKartiBilgileri
-    {
-        char *kartNumarasi;
-        char *gecerlilikTarihi; // tarih ay/yıl seklinde
-        char *kartSahibiAdi;
-        char *guvenlikKodu;
-    };
+    char *kartNumarasi;
+    char *gecerlilikTarihi; // tarih ay/yıl seklinde
+    char *kartSahibiAdi;
+    char *guvenlikKodu;
 
-    struct musteriAdresi adres;
-    struct krediKartiBilgileri krediKarti;
+    //struct musteriAdresi adres;
+    //struct krediKartiBilgileri krediKarti;
 
     struct musteriBilgileri *nextPtr;
 };
@@ -190,6 +143,47 @@ struct Test
     int veri;
     struct Test *sonraki;
 };
+
+// İşlev fonksiyonları
+float siparisDetaylari(float *fiyatToplam, float tekFiyat);
+
+// Silme ve Sayma Fonksiyonları
+void yemek_sil(int siparisKodu);
+void yemek_say();
+
+// Menü fonksiyonları
+void yemek_listesi(int n);
+void admin_menu();
+void siparis_menu();
+void ana_menu();
+void uygulamayiKapat();
+void gecersizGiris();
+int secimFonksiyonu();
+
+// Alt menü fonksiyonları
+void kebap();
+void doner();
+void corba();
+void evYemekleri();
+void balik();
+void pizza();
+void pide();
+void hamburger();
+void salata();
+void tatli();
+void icecekler();
+
+// Tasarım fonksiyonları
+void tamEkran();
+void cls();
+void echo(char print[]);
+void satir_bas(int line);
+void tab_bas(int tab);
+void bosluk_bas(int space);
+void cerceve();
+void karsilama();
+void ilerleme();
+void menuRenk();
 
 //Structlar - fonksiyon // Yemek Secimi
 void kebapSecimVeFiyatlandirma(struct kebaplarBilgi *pKebap, int n);
@@ -1959,8 +1953,11 @@ void musteriEkleme(musterilerPtr *ptr)
 
     // Bu structlar pointer ile musteriGiris fon
     struct musteriBilgileri musteriEkleme[musteriSayisi];
-    struct krediKartiBilgileri kredikart[musteriSayisi];
-    struct musteriAdresi adres[musteriSayisi];
+    ptr = &musteriEkleme;
+
+    //  struct musteriBilgileri musteriEkleme[musteriSayisi];
+    // struct krediKartiBilgileri kredikart[musteriSayisi];
+    // struct musteriAdresi adres[musteriSayisi];
 
     if (musteriKayitlari == NULL)
     {
@@ -1991,7 +1988,7 @@ void musteriEkleme(musterilerPtr *ptr)
     char sokak[25];
     char daireNo[25];
 
-    do //2 ornek olsun diye.
+    do // Koşul -1 olmayacağı için do sadece çağırıldığında 1 kez çalışır ve sayaç artar.
     {
 
         echo("\n\t\t--Uyelik olusturmak icin lutfen bilgilerinizi giriniz.--\n");
@@ -2021,40 +2018,40 @@ void musteriEkleme(musterilerPtr *ptr)
         scanf("%s", &daireNo);
 
         //!Burada girilen bilgilerin uzunlugu kadar bellekte alan acildi..
-        musteriEkleme[i].musteriIsmi = (char *)malloc(sizeof(char) * strlen(musteriIsmi));
-        musteriEkleme[i].musteriSoyismi = (char *)malloc(sizeof(char) * strlen(musteriSoyismi));
-        musteriEkleme[i].musteriSifre = (char *)malloc(sizeof(char) * strlen(musteriSifre));
-        kredikart[i].kartNumarasi = (char *)malloc(sizeof(char) * strlen(kartNumarasi));
-        kredikart[i].kartSahibiAdi = (char *)malloc(sizeof(char) * strlen(kartSahibiAdi));
-        kredikart[i].gecerlilikTarihi = (char *)malloc(sizeof(char) * strlen(gecerlilikTarihi));
-        kredikart[i].guvenlikKodu = (char *)malloc(sizeof(char) * strlen(guvenlikKodu));
-        adres[i].sehir = (char *)malloc(sizeof(char) * strlen(sehir));
-        adres[i].ilce = (char *)malloc(sizeof(char) * strlen(ilce));
-        adres[i].semt = (char *)malloc(sizeof(char) * strlen(semt));
-        adres[i].sokak = (char *)malloc(sizeof(char) * strlen(sokak));
-        adres[i].daireNo = (char *)malloc(sizeof(char) * strlen(daireNo));
+        musteriEkleme[i].musteriIsmi = (char *)malloc(sizeof(char) * strlen(musteriIsmi) + 1);
+        musteriEkleme[i].musteriSoyismi = (char *)malloc(sizeof(char) * strlen(musteriSoyismi) + 1);
+        musteriEkleme[i].musteriSifre = (char *)malloc(sizeof(char) * strlen(musteriSifre) + 1);
+        musteriEkleme[i].kartNumarasi = (char *)malloc(sizeof(char) * strlen(kartNumarasi) + 1);
+        musteriEkleme[i].kartSahibiAdi = (char *)malloc(sizeof(char) * strlen(kartSahibiAdi) + 1);
+        musteriEkleme[i].gecerlilikTarihi = (char *)malloc(sizeof(char) * strlen(gecerlilikTarihi) + 1);
+        musteriEkleme[i].guvenlikKodu = (char *)malloc(sizeof(char) * strlen(guvenlikKodu) + 1);
+        musteriEkleme[i].sehir = (char *)malloc(sizeof(char) * strlen(sehir) + 1);
+        musteriEkleme[i].ilce = (char *)malloc(sizeof(char) * strlen(ilce) + 1);
+        musteriEkleme[i].semt = (char *)malloc(sizeof(char) * strlen(semt) + 1);
+        musteriEkleme[i].sokak = (char *)malloc(sizeof(char) * strlen(sokak) + 1);
+        musteriEkleme[i].daireNo = (char *)malloc(sizeof(char) * strlen(daireNo) + 1);
 
         //!burada alinan bilgiler structlara kopyalandi...
         strcpy(musteriEkleme[i].musteriIsmi, musteriIsmi);
         strcpy(musteriEkleme[i].musteriSoyismi, musteriSoyismi);
         strcpy(musteriEkleme[i].musteriSifre, musteriSifre);
-        strcpy(kredikart[i].kartNumarasi, kartNumarasi);
-        strcpy(kredikart[i].kartSahibiAdi, kartSahibiAdi);
-        strcpy(kredikart[i].gecerlilikTarihi, gecerlilikTarihi);
-        strcpy(kredikart[i].guvenlikKodu, guvenlikKodu);
-        strcpy(adres[i].sehir, sehir);
-        strcpy(adres[i].ilce, ilce);
-        strcpy(adres[i].semt, semt);
-        strcpy(adres[i].sokak, sokak);
-        strcpy(adres[i].daireNo, daireNo);
+        strcpy(musteriEkleme[i].kartNumarasi, kartNumarasi);
+        strcpy(musteriEkleme[i].kartSahibiAdi, kartSahibiAdi);
+        strcpy(musteriEkleme[i].gecerlilikTarihi, gecerlilikTarihi);
+        strcpy(musteriEkleme[i].guvenlikKodu, guvenlikKodu);
+        strcpy(musteriEkleme[i].sehir, sehir);
+        strcpy(musteriEkleme[i].ilce, ilce);
+        strcpy(musteriEkleme[i].semt, semt);
+        strcpy(musteriEkleme[i].sokak, sokak);
+        strcpy(musteriEkleme[i].daireNo, daireNo);
 
         //!Dosyaya yazdirma islemleri yapildi.
         fprintf(musteriKayitlari, "-Ad: %s\t-Soyad: %s\t-Sifre: %s\n", musteriEkleme[i].musteriIsmi, musteriEkleme[i].musteriSoyismi,
                 musteriEkleme[i].musteriSifre);
-        fprintf(musteriKayitlari, "-Kart Numarasi: %s\t-Kart Uzerindeki Isim: %s\n", kredikart[i].kartNumarasi, kredikart[i].kartSahibiAdi);
-        fprintf(musteriKayitlari, "-Gecerlilik Tarihi: %s\t-Guvenlik Kodu: %s\n", kredikart[i].gecerlilikTarihi, kredikart[i].guvenlikKodu);
-        fprintf(musteriKayitlari, "-Sehir: %s\t%-Ilce: %s\t-Mahalle: %s\n", adres[i].sehir, adres[i].ilce, adres[i].semt);
-        fprintf(musteriKayitlari, "-Sokak: %s\t-Ev No: %s\n", adres[i].sokak, adres[i].daireNo);
+        fprintf(musteriKayitlari, "-Kart Numarasi: %s\t-Kart Uzerindeki Isim: %s\n", musteriEkleme[i].kartNumarasi, musteriEkleme[i].kartSahibiAdi);
+        fprintf(musteriKayitlari, "-Gecerlilik Tarihi: %s\t-Guvenlik Kodu: %s\n", musteriEkleme[i].gecerlilikTarihi, musteriEkleme[i].guvenlikKodu);
+        fprintf(musteriKayitlari, "-Sehir: %s\t%-Ilce: %s\t-Mahalle: %s\n", musteriEkleme[i].sehir, musteriEkleme[i].ilce, musteriEkleme[i].semt);
+        fprintf(musteriKayitlari, "-Sokak: %s\t-Ev No: %s\n", musteriEkleme[i].sokak, musteriEkleme[i].daireNo);
 
         fprintf(musteriKayitlari, "============================================================================\n");
     } while (i == -1);

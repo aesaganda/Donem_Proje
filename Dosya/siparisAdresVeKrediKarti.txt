@@ -1,0 +1,12 @@
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 120
+-Musteri Adi: eren	-Musteri Soyadi: saganda 
+-Sehir: ist	- Ilce: gun 
+-Mahalle: ak	-Sokak: beyatli	 -DaireNo:32 
+
+            ODEME SIPARIS TESLIMINDE YAPILACAKTIR.            
+-Musteri Siparis Kodu: 4705
+-Musteri Adi: eren	-Musteri Soyadi: saganda 
+-Sehir: ist	- Ilce: gun 
+-Mahalle: ak	-Sokak: beyat	 -DaireNo:231 
+
