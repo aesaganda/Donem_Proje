@@ -1,7 +1,0 @@
-hamsi 100 30
-cipura 100 30
-levrek 100 30
-istavrit 100 30
-kefal 100 30
-istakoz 100 50
-midye 100 15
